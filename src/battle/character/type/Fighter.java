@@ -21,9 +21,9 @@ public abstract class Fighter implements Combatant, Damageable {
 	 */
 	public Fighter(int maxHealth, int attackPower) {
 		//TODO: PART 1
-		this.maxHealth = -1;
-		this.health = -1;
-		this.attackPower = -1;
+		this.maxHealth = maxHealth;
+		this.health = maxHealth;
+		this.attackPower = attackPower;
 	}
 	
 	/**
@@ -35,7 +35,9 @@ public abstract class Fighter implements Combatant, Damageable {
 	 */
 	public int attack(Damageable opponent) {
 		//TODO: PART 1
-		return -1;
+		int effect = return (int) Math.random() * (attackPower/2) + (attackPower/2) * -1;
+		opponent.incrementHealth(effect);
+		return effect;
 	}
 	
 	/**
@@ -94,6 +96,9 @@ public abstract class Fighter implements Combatant, Damageable {
 	@Override
 	public boolean isAlive() {
 		//TODO: PART 1
+		if(getHealth() > 0){
+			return true;
+		}
 		return false;
 	}
 	
@@ -116,6 +121,9 @@ public abstract class Fighter implements Combatant, Damageable {
 	@Override
 	public boolean canTakeTurn() {
 		//TODO: PART 1
+		if (isAlive() == true){
+			return true;
+		}
 		return false;
 	}
 }
