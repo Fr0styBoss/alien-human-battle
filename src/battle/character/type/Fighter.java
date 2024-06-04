@@ -35,7 +35,7 @@ public abstract class Fighter implements Combatant, Damageable {
 	 */
 	public int attack(Damageable opponent) {
 		//TODO: PART 1
-		int effect = return (int) Math.random() * (attackPower/2) + (attackPower/2) * -1;
+		int effect = (int) Math.random() * (attackPower/2) + (attackPower/2) * -1;
 		opponent.incrementHealth(effect);
 		return effect;
 	}

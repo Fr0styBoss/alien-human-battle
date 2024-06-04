@@ -29,7 +29,9 @@ public abstract class SpecialFighter extends Fighter implements Disableable {
 	 */
 	public int attack(Damageable opponent) {
 		//TODO: PART 3
-		return -1;
+		int effect = (int) (Math.random() * getAttackPower()) * -1;  
+		opponent.incrementHealth(effect);
+		return effect;
 	}
 
 	/**
@@ -44,7 +46,19 @@ public abstract class SpecialFighter extends Fighter implements Disableable {
 	 */
 	public int infiltrate(Damageable opponent) {		
 		//TODO: PART 3
-		return -1;
+		int dice = (int) (Math.random() * 100);
+		if (dice > 50) {
+			int effect = opponent.getAttackPower()*2;
+			opponent.incrementHealth(effect);
+			return effect;
+		}
+		else if (dice <= 20) {
+			disabledTurns = 5;
+			return 0; 
+		}
+		else {
+			return 0;
+		}
 	}
 	
 	/**
