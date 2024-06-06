@@ -17,7 +17,7 @@ public abstract class SpecialFighter extends Fighter implements Disableable {
 	 */
 	public SpecialFighter(int maxHealth, int attackPower) {
 		//TODO: PART 3 - is this being done somewhere else? how can we borrow that functionality
-		super(-1, -1);
+		super(maxHealth, attackPower);
 	}
 	
 	/**
@@ -76,7 +76,7 @@ public abstract class SpecialFighter extends Fighter implements Disableable {
 	@Override
 	public int getMaxHealth() {
 		//TODO: PART 3 - is this being done somewhere else? how can we borrow that functionality
-		return -1;
+		return super.getMaxHealth();
 	}
 	
 	/**
@@ -85,7 +85,7 @@ public abstract class SpecialFighter extends Fighter implements Disableable {
 	@Override
 	public int getHealth() {
 		//TODO: PART 3 - is this being done somewhere else? how can we borrow that functionality
-		return -1;
+		return super.getHealth();
 	}
 	
 	/**
@@ -94,7 +94,7 @@ public abstract class SpecialFighter extends Fighter implements Disableable {
 	@Override
 	public int getAttackPower() {
 		//TODO: PART 3 - is this being done somewhere else? how can we borrow that functionality
-		return -1;
+		return super.getAttackPower();
 	}
 	
 	/**
@@ -103,7 +103,7 @@ public abstract class SpecialFighter extends Fighter implements Disableable {
 	@Override
 	public boolean isAlive() {
 		//TODO: PART 3 - is this being done somewhere else? how can we borrow that functionality
-		return false;
+		return super.isAlive();
 	}
 	
 	/**
@@ -130,12 +130,11 @@ public abstract class SpecialFighter extends Fighter implements Disableable {
 	@Override
 	public String getStatus() {
 		//TODO: PART 3 - uncomment when the rest of PART 3 is done
-		/*if(isDisabled() && isAlive()) {
+		if(isDisabled() && isAlive()) {
 			return "disabled for " + this.disabledTurns + " more turns; " + super.getStatus();
 		} else {
 			return super.getStatus();
-		}*/
-		return "";
+		}
 	}
 	
 	/**
@@ -144,6 +143,6 @@ public abstract class SpecialFighter extends Fighter implements Disableable {
 	@Override
 	public boolean canTakeTurn() {
 		//TODO: PART 3 - is this being done somewhere else? how can we borrow that functionality
-		return false;
+		return super.canTakeTurn();
 	}
 }
